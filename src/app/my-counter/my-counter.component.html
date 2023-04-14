@@ -1,0 +1,28 @@
+<div class="flex flex-col justify-center items-center space-y-4">
+  <h1 class="pt-5 text-2xl text-center font-bold underline">
+    Increment the counter with ngrx store!
+  </h1>
+
+  <button
+    (click)="increment()"
+    class="rounded-lg p-2 border-orange-700 border-2 hover:border-orange-800"
+  >
+    Increment
+  </button>
+
+  <button
+    (click)="decrement()"
+    class="rounded-lg p-2 border-orange-700 border-2 hover:border-orange-800"
+  >
+    Decrement
+  </button>
+
+  <button
+    (click)="reset()"
+    class="rounded-lg p-2 border-orange-700 border-2 hover:border-orange-800"
+  >
+    Reset Counter
+  </button>
+
+  <div>Current Count: {{ count$ | async }}</div>
+</div>
