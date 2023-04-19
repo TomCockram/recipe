@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/counter/counter.reducer';
-import { MyCounterComponent } from './my-counter/my-counter.component';
-import { RecipeComponent } from './recipe/recipe.component';
+import { recipeReducer } from './store/recipe/recipe.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent, MyCounterComponent, RecipeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    RouterModule,
+    StoreModule.forRoot({ count: counterReducer, recipe: recipeReducer }),
+    StoreDevtoolsModule.instrument({ name: 'Recipe Test' }),
   ],
   providers: [],
   bootstrap: [AppComponent],

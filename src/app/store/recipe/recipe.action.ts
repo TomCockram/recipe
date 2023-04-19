@@ -1,5 +1,7 @@
 import { createAction } from '@ngrx/store';
+import { Recipe } from 'src/app/debug/recipe/recipe.component';
 
-export const addRecipe = createAction('[Recipe Component] Add');
-export const removeRecipe = createAction('[Recipe Component] Remove');
-export const resetRecipe = createAction('[Recipe Component] Reset');
+export const add = createAction('[Recipe Component] Add', (recipe: Recipe) => ({
+  recipe,
+}));
+export const remove = createAction('[Recipe Component] Remove');

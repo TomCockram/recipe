@@ -42,5 +42,19 @@
         Submit Form
       </button>
     </div>
+
+    <div>
+      <button
+        class="rounded-lg p-2 border-orange-700 border-2 hover:border-orange-800 w-full"
+        type="button"
+        (click)="remove()"
+      >
+        Remove Recipe
+      </button>
+    </div>
   </form>
+  <div>
+    <h1>Current Recipes</h1>
+    <pre>{{ recipes$ | async | json }}</pre>
+  </div>
 </div>

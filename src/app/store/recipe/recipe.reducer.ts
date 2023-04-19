@@ -1,15 +1,12 @@
-// import { createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 
-// import { addRecipe, removeRecipe, resetRecipe } from './recipe.action';
-// import { Recipe } from '../../recipe/recipe.component';
+import { add, remove } from './recipe.action';
+import { Recipe } from 'src/app/debug/recipe/recipe.component';
 
-// export const initialState = [];
+export const initialState: Recipe[] = [];
 
-//TODO: write reducers to add, recipe and reset the recipe state
-
-// export const counterReducer = createReducer(
-//   initialState,
-//   on(addRecipe, (state) => state + 1),
-//   on(removeRecipe, (state) => state - 1),
-//   on(resetRecipe, (state) => 0)
-// );
+export const recipeReducer = createReducer(
+  initialState,
+  on(add, (state, { recipe }) => [...state, recipe]),
+  on(remove, (state) => [...state.slice(0, -1)])
+);
